@@ -21,7 +21,8 @@ It comes with a **role-based UI (Admin, Student)**, **mock data-driven content**
 
 ## 🚀 Tech Stack  
 
-- **Frontend:** React.js + Vite, TailwindCSS  
+- **Frontend:** React.js + Vite, TailwindCSS
+- **Authentication:** Firebase  
 - **Hosting:** Vercel  
 - **Version Control:** Git + GitHub  
 
@@ -57,8 +58,76 @@ npm install
 # Start development server
 npm run dev
 ```
+### 🔧 Firebase Setup
+
+To enable Authentication feature, you’ll need to connect your own Firebase project.
+
+#### 1. Create a Firebase Project
+
+Go to Firebase Console.
+
+Click Add Project → enter a project name → continue.
+
+Disable/enable Google Analytics as per your choice → create project.
+
+#### 2. Add a Web App to Firebase
+
+In your Firebase project dashboard, click </> Web App.
+
+Register your app with a nickname (e.g., EduHubApp).
+
+Firebase will give you a Firebase config object (apiKey, authDomain, etc.).
+Example:
+```
+const firebaseConfig = {
+  apiKey: "your-api-key",
+  authDomain: "your-app.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-app.appspot.com",
+  messagingSenderId: "your-messaging-id",
+  appId: "your-app-id"
+};
+```
+#### 3. Enable Authentication
+
+In the Firebase console → Authentication → Get Started.
+
+Enable Email/Password (or any other provider you want).
+
+#### 4. Enable Firestore Database
+
+Go to Firestore Database → Create Database.
+
+Choose Start in test mode (for development).
+
+Select a Cloud Firestore location → enable.
+
+#### 5. Update the Project Code
+
+Open the file:
+
+``` 
+src/auth_system/firebase.js
+```
 
 
+Replace the values inside firebaseConfig with your own:
+```
+const firebaseConfig = {
+  apiKey: "Your apiKey",
+  authDomain: "Your authDomain",
+  projectId: "Your projectId",
+  storageBucket: "Your storageBucket",
+  messagingSenderId: "Your messagingSenderId",
+  appId: "Your appId"
+};
+```
+#### 6. Install Firebase Package
+```
+# Run the following command:
+
+npm install firebase
+```
 ## 📁 Project Folder Structure
 ```
 lms-dashboard/
