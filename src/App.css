@@ -1,0 +1,201 @@
+/* App.css */
+
+/* Layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #111827;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar li:hover {
+  color: #60a5fa;
+}
+
+/* Landing Section */
+.landing {
+  flex: 1;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.landing h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.landing button {
+  padding: 0.8rem 2rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.landing button:hover {
+  background: #1e40af;
+}
+
+/* Chat Section */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background: #f3f4f6;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  max-width: 70%;
+}
+
+.message.user {
+  background: #2563eb;
+  color: white;
+  margin-left: auto;
+}
+
+.message.bot {
+  background: #e5e7eb;
+  color: #111827;
+  margin-right: auto;
+}
+
+.chat-input {
+  display: flex;
+  padding: 0.8rem;
+  background: white;
+  border-top: 1px solid #d1d5db;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.chat-input button {
+  margin-left: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background: #1e40af;
+}
+
+/* Footer */
+.footer {
+  padding: 1rem;
+  text-align: center;
+  background: #111827;
+  color: #d1d5db;
+  margin-top: auto;
+}
+
+/* ============================= */
+/* 📱 RESPONSIVENESS */
+/* ============================= */
+
+/* Mobile (<= 640px) */
+@media (max-width: 640px) {
+  .navbar ul {
+    display: none; /* Hide menu, you can later add hamburger */
+  }
+
+  .landing h1 {
+    font-size: 1.8rem;
+  }
+
+  .landing p {
+    font-size: 1rem;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+}
+
+/* Tablet (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .landing h1 {
+    font-size: 2.2rem;
+  }
+
+  .landing p {
+    font-size: 1.1rem;
+  }
+
+  .navbar ul {
+    gap: 1rem;
+  }
+
+  .message {
+    max-width: 80%;
+  }
+}
+
+/* Desktop (>= 1025px) */
+@media (min-width: 1025px) {
+  .landing h1 {
+    font-size: 3rem;
+  }
+
+  .landing p {
+    font-size: 1.3rem;
+  }
+
+  .message {
+    max-width: 60%;
+  }
+}
